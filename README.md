@@ -41,3 +41,9 @@ yasuhiro@hostname ~/.sh.d master 3baf7507 $
 `git` has already a script for prompt.
 
 * https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+
+
+## license
+
+[GPL 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)
+
