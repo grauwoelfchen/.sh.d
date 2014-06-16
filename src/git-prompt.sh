@@ -19,12 +19,12 @@ function git_prompt() {
   fi
   head=`git rev-parse --verify -q HEAD 2>/dev/null | cut -c 1-8`
   change=`git status | grep "^nothing to"`
-  # NOTE
-  # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh#250
-  # square brackets \[ and \] both are needed ?
   if [ -z "$ZSH_VERSION" ]; then
-    # bash 16 using colors
-    head_color="\e[0m" # or \e[0;33m\] ?
+    # NOTE
+    # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh#250
+    # square brackets \[ and \] both are needed ?
+    # bash using 16 colors
+    head_color="\e[0m" # or \e[0;33m\]
     clear_color="\e[0m"
     if [ -n "$change" ]; then
       branch_color="\e[0;32m"
@@ -32,7 +32,7 @@ function git_prompt() {
       branch_color="\e[0;31m"
     fi
   else
-    # zsh 256 using colors
+    # zsh using 256 colors
     head_color="%F{229}"
     clear_color="%f"
     if [ -n "$change" ]; then
