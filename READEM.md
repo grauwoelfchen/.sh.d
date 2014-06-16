@@ -29,9 +29,11 @@ PROMPT='...$(git_prompt)'
 
 ### output
 
+e.g. bash
+
 ```bash
-yasuhiro ~ $ cd /path/to/git/repo
-yasuhiro ~ /path/to/git/repo master 3baf7507 $
+yasuhiro@hostname ~ $ cd ~/.sh.d
+yasuhiro@hostname ~/.sh.d master 3baf7507 $
 ```
 
 ### link
