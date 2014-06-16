@@ -1,6 +1,6 @@
 # .sh.d
 
-Shared shell scripts for bash/zsh
+Shared shell scripts for shell.
 
 
 ## git-prompt.sh
