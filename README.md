@@ -27,13 +27,18 @@ setopt prompt_subst
 PROMPT='...$(git_prompt)'
 ```
 
-### output
-
-e.g. bash
+### output examples
 
 ```bash
-yasuhiro@hostname ~ $ cd ~/.sh.d
-yasuhiro@hostname ~/.sh.d master 3baf7507 $
+# e.g. bash
+username@hostname ~ $ cd ~/.sh.d
+username@hostname ~/.sh.d master 3baf7507 $
+```
+
+```zsh
+# e.g. zsh
+% cd ~/.sh.d
+hostname ~/.sh.d master 6a740dab 0.04, 0.05, 0.12
 ```
 
 ### link
