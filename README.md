@@ -45,5 +45,5 @@ yasuhiro@hostname ~/.sh.d master 3baf7507 $
 
 ## license
 
-[GPL 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)
-
+Copyright (C) 2014 - 2016 Yasuhiro Asaka \<grauwoelfchen@gmail.com\>  
+Distributed under the GNU General Public License, version [2.0](http://www.gnu.org/licenses/gpl-2.0.txt).
