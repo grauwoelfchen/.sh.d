@@ -1,25 +1,28 @@
 # .sh.d
 
-Shared shell scripts for shell.
+Personal shared shell scripts for shells.
 
 
-## git-prompt.sh
+## Repository
 
-The branch and repo status will be displayed in prompt only if
+https://gitlab.com/grauwoelfchen/DotShD
+
+
+## Setup
+
+The branch and repo status will be displayed in the prompt, only if
 you are currently in a git repo.
 
-### usage
+Just `source git-prompt.sh`, then use `git_prompt`
 
-Just `source`, then use `git_prompt`
-
-#### `.bashrc`
+### Bash `.bashrc`
 
 ```bash
 source /path/to/git-prompt.sh
 PS1="\u@\h \w \$(git_prompt)\$ "
 ```
 
-#### `.zshrc`
+### Zsh `.zshrc`
 
 ```zsh
 source /path/to/git-prompt.sh
@@ -27,7 +30,7 @@ setopt prompt_subst
 PROMPT='...$(git_prompt)'
 ```
 
-### output examples
+### Examples
 
 use `git_prompt` as you like:
 
@@ -44,14 +47,21 @@ hostname ~/.sh.d master 6a740dab 0.04, 0.05, 0.12
 %
 ```
 
-### link
+### Link
 
-`git` has already a script for prompt.
+Git has already a script for prompt like this one.  
+You may want to use it.
 
 * https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 
 
-## license
+## License
 
-Copyright (C) 2014 - 2016 Yasuhiro Asaka \<grauwoelfchen@gmail.com\>  
-Distributed under the GNU General Public License, version [2.0](http://www.gnu.org/licenses/gpl-2.0.txt).
+Copyright (c) 2014-2017 Yasuhiro Asaka
+
+This is free software:  
+You can redistribute it and/or modify it under the terms of
+the GUN General Public License as published by the
+Free Software Foundation.
+
+See [LICENSE](LICENSE). (`GPL-2.0`)
