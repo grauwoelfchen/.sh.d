@@ -21,7 +21,7 @@ use in "double quote"
 
 ```bash
 source /path/to/git-prompt.sh
-PS1="\u@\h \w \$(git_prompt)\$ "
+PS1="\u@\h \w \$(git_prompt) \$ "
 ```
 
 ```bash
