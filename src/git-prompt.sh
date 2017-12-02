@@ -20,13 +20,31 @@ function git_prompt() {
   head=`git rev-parse --verify -q HEAD 2>/dev/null | cut -c 1-8`
   change=`git status | grep "^nothing to"`
   if [ -z "$ZSH_VERSION" ]; then
-    # bash using 16 colors
-    head_color='\[\033[00;33m\]'  # \e[00;33m\]
-    clear_color='\[\033[00m\]'  # \e[00m\]
+    # NOTE:
+    # This breaks history showing or line break in some situation
+    # (e.g. long line)...
+    # Prompt configuration might be also related to this issue. See
+    # `.bashrc`. Until fixing the issue, disable color in bash :'(
+    #
+    # ```
+    # PS1='\[\033[01;32m\]\u@\h\[\033[0m\] \[\033[01;34m\]\w\[\033[0m\] $(git_prompt)\$ '
+    # ```
+    #
+    ## bash using 16 colors
+    #head_color="\033[0;33m"
+    #clear_color="\033[0m"
+    #if [ -n "$change" ]; then
+    #  branch_color="\033[0;32m"
+    #else
+    #  branch_color="\033[0;31m"
+    #fi
+    # no color :'(h
+    head_color=""
+    clear_color=""
     if [ -n "$change" ]; then
-      branch_color='\[\033[00;32m\]'  # \e[00;32m\]
+      branch_color=""
     else
-      branch_color='\[\033[00;31m\]'  # \e[00;31m\]
+      branch_color=""
     fi
   else
     # zsh using 256 colors
@@ -38,5 +56,5 @@ function git_prompt() {
       branch_color="%F{160}"
     fi
   fi
-  echo -e ${branch_color}${branch}${clear_color}' '${head_color}${head}${clear_color}
+  echo -e "$branch_color$branch$clear_color $head_color$head$clear_color "
 }
