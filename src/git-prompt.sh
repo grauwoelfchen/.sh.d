@@ -6,7 +6,7 @@
 #   source /path/to/git-prompt.sh
 #
 #   bash:
-#     PS1="\u@\h \w \$(git_prompt)\$ "
+#     PS1="\u@\h \w $(git_prompt)\$ "
 #
 #   zsh:
 #     setopt prompt_subst
@@ -21,12 +21,12 @@ function git_prompt() {
   change=`git status | grep "^nothing to"`
   if [ -z "$ZSH_VERSION" ]; then
     # bash using 16 colors
-    head_color="\033[00;33m"  # \e[0m
-    clear_color="\033[00m"  # \e[0m
+    head_color="\033[00;33m"  # \e[00;33m\]
+    clear_color="\033[00m"  # \e[00m\]
     if [ -n "$change" ]; then
-      branch_color="\033[01;32m"  # \e[0;32m
+      branch_color="\033[00;32m"  # \e[00;32m\]
     else
-      branch_color="\033[01;31m"  # \e[0;31m
+      branch_color="\033[00;31m"  # \e[00;31m\]
     fi
   else
     # zsh using 256 colors
