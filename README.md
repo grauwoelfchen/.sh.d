@@ -22,6 +22,11 @@ source /path/to/git-prompt.sh
 PS1="\u@\h \w \$(git_prompt)\$ "
 ```
 
+```bash
+# gentoo like color prompt + git_prompt
+PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(git_prompt)\$\[\033[00m\] '
+```
+
 ### Zsh `.zshrc`
 
 ```zsh
