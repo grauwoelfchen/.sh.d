@@ -21,12 +21,12 @@ function git_prompt() {
   change=`git status | grep "^nothing to"`
   if [ -z "$ZSH_VERSION" ]; then
     # bash using 16 colors
-    head_color="\033[00;33m"  # \e[00;33m\]
-    clear_color="\033[00m"  # \e[00m\]
+    head_color='\[\033[00;33m\]'  # \e[00;33m\]
+    clear_color='\[\033[00m\]'  # \e[00m\]
     if [ -n "$change" ]; then
-      branch_color="\033[00;32m"  # \e[00;32m\]
+      branch_color='\[\033[00;32m\]'  # \e[00;32m\]
     else
-      branch_color="\033[00;31m"  # \e[00;31m\]
+      branch_color='\[\033[00;31m\]'  # \e[00;31m\]
     fi
   else
     # zsh using 256 colors
@@ -38,5 +38,5 @@ function git_prompt() {
       branch_color="%F{160}"
     fi
   fi
-  echo -e "$branch_color$branch$clear_color $head_color$head$clear_color "
+  echo -e ${branch_color}${branch}${clear_color}' '${head_color}${head}${clear_color}
 }
